@@ -1,0 +1,287 @@
+;;; .emacs --- Emacs dot file by Matvey Cherevko <BlackMATov@gmail.com>
+;;; Commentary:
+;;; Code:
+(require 'package)
+(add-to-list 'package-archives '("elpa" . "http://elpa.gnu.org/packages/"))
+(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
+(add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
+(package-initialize)
+
+;; --------------------------------------
+;; auto install
+;; --------------------------------------
+
+(defvar my/package-list '(fiplr undo-tree zenburn-theme osx-clipboard smooth-scrolling
+                          cmake-mode cmake-project
+                          projectile helm-projectile
+                          company flycheck
+                          helm helm-company
+                          markdown-mode
+                          omnisharp
+                          erlang
+                          irony company-irony company-irony-c-headers flycheck-irony
+                          evil evil-leader evil-visualstar evil-terminal-cursor-changer
+                          ace-jump-mode ace-jump-buffer
+                          neotree))
+
+(unless package-archive-contents
+  (package-refresh-contents))
+
+(dolist (package my/package-list)
+  (unless (package-installed-p package)
+    (package-install package)))
+
+;; --------------------------------------
+;; common
+;; --------------------------------------
+
+;; disable alarm bell
+;; https://www.emacswiki.org/emacs/AlarmBell
+(setq ring-bell-function 'ignore)
+
+(menu-bar-mode -1)
+(if (display-graphic-p) (tool-bar-mode -1))
+(if (display-graphic-p) (scroll-bar-mode -1))
+
+(ido-mode +1)
+(show-paren-mode +1)
+(electric-pair-mode +1)
+(column-number-mode +1)
+(global-hl-line-mode +1)
+
+(winner-mode t)
+(windmove-default-keybindings)
+
+(setq-default tab-width 4)
+(setq-default c-basic-offset 4)
+(setq-default truncate-lines t)
+
+(setq auto-save-default nil)
+(setq make-backup-files nil)
+
+(unless (display-grayscale-p)
+  (xterm-mouse-mode 1)
+  (global-set-key (kbd "<mouse-5>") 'scroll-up-line)
+  (global-set-key (kbd "<mouse-4>") 'scroll-down-line))
+
+;; --------------------------------------
+;; packages
+;; --------------------------------------
+
+;; package fiplr
+(require 'fiplr)
+(fiplr-mode +1)
+
+;; package undo-tree
+(require 'undo-tree)
+(defun my/undo-tree-mode-hook ()
+  "My undo-tree mode hook."
+  (setq undo-tree-visualizer-diff t)
+  (setq undo-tree-visualizer-timestamps t))
+(add-hook 'undo-tree-mode-hook 'my/undo-tree-mode-hook)
+(global-undo-tree-mode +1)
+
+;; package zenburn-theme
+(require 'zenburn-theme)
+(load-theme 'zenburn t)
+
+;; packages osx-clipboard
+(require 'osx-clipboard)
+(osx-clipboard-mode +1)
+
+;; packages smooth-scrolling
+(require 'smooth-scrolling)
+(defun my/smooth-scrolling-mode-hook ()
+  "My smooth-scroll mode hook."
+  (setq smooth-scroll-margin 4))
+(add-hook 'smooth-scrolling-mode-hook 'my/smooth-scrolling-mode-hook)
+(smooth-scrolling-mode +1)
+
+;; package cmake-mode
+(require 'cmake-mode)
+
+;; package cmake-project
+(require 'cmake-project)
+
+;; package projectile
+(require 'projectile)
+(projectile-mode +1)
+
+;; package helm-projectile
+(require 'helm-projectile)
+(helm-projectile-on)
+
+;; package company
+(require 'company)
+(defun my/company-mode-hook ()
+  "My company mode hook."
+  (setq company-idle-delay 0))
+(add-hook 'company-mode-hook 'my/company-mode-hook)
+(global-company-mode +1)
+
+;; package flycheck
+(require 'flycheck)
+(global-flycheck-mode +1)
+
+;; package helm
+(require 'helm)
+(helm-mode +1)
+
+;; package helm-company
+(require 'helm-company)
+
+;; --------------------------------------
+;; markdown-mode
+;; --------------------------------------
+
+(require 'markdown-mode)
+
+;; --------------------------------------
+;; omnisharp-mode
+;; --------------------------------------
+
+(require 'omnisharp)
+(defun my/csharp-mode-hook ()
+  "My csharp mode hook."
+  (setq omnisharp-eldoc-support nil)
+  (setq omnisharp-server-executable-path "~/Programming/omnisharp-server/OmniSharp/bin/Debug/OmniSharp.exe")
+  (omnisharp-mode))
+(add-hook 'csharp-mode-hook 'my/csharp-mode-hook)
+(eval-after-load 'company
+  '(add-to-list 'company-backends 'company-omnisharp))
+
+;; --------------------------------------
+;; erlang-mode
+;; --------------------------------------
+
+(require 'erlang-start)
+(setq flycheck-erlang-include-path '("../include/"))
+
+;; --------------------------------------
+;; irony-mode
+;; --------------------------------------
+
+(require 'irony)
+(defun my/irony-mode-hook ()
+  "My irony mode hook."
+  (setq irony-additional-clang-options '("-std=c++14" "-stdlib=libc++"))
+  (setq flycheck-clang-args '("-std=c++14" "-stdlib=libc++"))
+  (setq flycheck-clang-language-standard "c++14")
+  (define-key irony-mode-map [remap completion-at-point]
+    'irony-completion-at-point-async)
+  (define-key irony-mode-map [remap complete-symbol]
+    'irony-completion-at-point-async))
+(add-hook 'c-mode-hook 'irony-mode)
+(add-hook 'c++-mode-hook 'irony-mode)
+(add-hook 'irony-mode-hook 'my/irony-mode-hook)
+(add-hook 'irony-mode-hook 'irony-cdb-autosetup-compile-options)
+
+(require 'company-irony)
+(eval-after-load 'company
+  '(add-to-list 'company-backends 'company-irony))
+(add-hook 'irony-mode-hook 'company-irony-setup-begin-commands)
+
+(require 'company-irony-c-headers)
+(eval-after-load 'company
+  '(add-to-list 'company-backends 'company-irony-c-headers))
+
+(require 'flycheck-irony)
+(eval-after-load 'flycheck
+  '(add-hook 'flycheck-mode-hook #'flycheck-irony-setup))
+
+;; --------------------------------------
+;; evil-mode
+;; --------------------------------------
+
+;; must be before evil packages
+(defvar evil-want-C-i-jump t)
+(defvar evil-want-C-u-scroll t)
+
+;; package evil-terminal-cursor-changer
+(unless (display-graphic-p)
+  (require 'evil-terminal-cursor-changer)
+  (evil-terminal-cursor-changer-activate))
+
+;; package evil-visualstar
+(require 'evil-visualstar)
+(global-evil-visualstar-mode +1)
+
+;; package evil-leader
+(require 'evil-leader)
+(evil-leader/set-leader "\\")
+(evil-leader/set-key
+  "n"   'neotree-toggle
+  "u"   'undo-tree-visualize
+  "ff"  'fiplr-find-file
+  "fd"  'fiplr-find-directory'
+  "cc"  'comment-region
+  "cu"  'uncomment-region
+  "be"  'helm-buffers-list
+  "bs"  'split-window-vertically
+  "bv"  'split-window-horizontally
+  "k"   'kill-this-buffer
+  "gt"  'omnisharp-go-to-definition
+  "gT"  'omnisharp-go-to-definition-other-window
+  "\\b" 'ace-jump-buffer
+  "\\w" 'ace-jump-word-mode)
+(global-evil-leader-mode +1)
+
+;; package evil
+(require 'evil)
+(defun my/evil-mode-hook ()
+  "My evil mode hook."
+  (setq evil-emacs-state-cursor 'box)
+  (setq evil-motion-state-cursor 'box)
+  (setq evil-normal-state-cursor 'box)
+  (setq evil-visual-state-cursor 'box)
+  (setq evil-insert-state-cursor 'bar)
+  (setq evil-replace-state-cursor 'hbar)
+  (setq evil-operator-state-cursor 'box))
+(add-hook 'evil-mode-hook 'my/evil-mode-hook)
+(evil-mode +1)
+
+;; --------------------------------------
+;; ace-jump
+;; --------------------------------------
+
+;; package ace-jump-mode
+(require 'ace-jump-mode)
+
+;; package ace-jump-buffer
+(require 'ace-jump-buffer)
+
+;; --------------------------------------
+;; neotree
+;; --------------------------------------
+
+(require 'neotree)
+(defun my/neotree-mode-hook ()
+  "My neotree mode hook."
+  (setq neo-window-width 30)
+  (setq neo-window-fixed-size nil)
+  (evil-local-set-key 'normal (kbd "RET") 'neotree-enter)
+  (evil-local-set-key 'normal (kbd "a")   'neotree-stretch-toggle)
+  (evil-local-set-key 'normal (kbd "h")   'neotree-hidden-file-toggle)
+  (evil-local-set-key 'normal (kbd "r")   'neotree-refresh)
+  (evil-local-set-key 'normal (kbd "c")   'neotree-change-root)
+  (evil-local-set-key 'normal (kbd "q")   'neotree-hide))
+(add-hook 'neotree-mode-hook 'my/neotree-mode-hook)
+
+;; --------------------------------------
+;; auto package stuff
+;; --------------------------------------
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   (quote
+	(evil-terminal-cursor-changer zenburn-theme smooth-scrolling osx-clipboard omnisharp neotree markdown-mode helm-projectile helm-company flycheck-irony fiplr evil-visualstar evil-leader erlang company-irony-c-headers company-irony cmake-project cmake-mode ace-jump-mode ace-jump-buffer))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
+;;; .emacs ends here

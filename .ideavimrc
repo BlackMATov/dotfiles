@@ -1,0 +1,16 @@
+set clipboard=unnamed
+let mapleader="\"
+
+nnoremap <leader>cc :action CommentByLineComment<cr>
+vnoremap <leader>cc :<bs><bs><bs><bs><bs>action VimVisualSwapSelections<cr>:action CommentByLineComment<cr>
+
+nmap <leader>bv :action VimWindowSplitVertical<cr>
+nmap <leader>bs :action VimWindowSplitHorizontal<cr>
+
+nmap <S-Left>  <c-w>h
+nmap <S-Right> <c-w>l
+nmap <S-Down>  <c-w>j
+nmap <S-Up>    <c-w>k
+
+nmap [[ :action MethodUp<cr>
+nmap ]] :action MethodDown<cr>
