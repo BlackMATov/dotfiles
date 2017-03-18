@@ -174,11 +174,6 @@ set incsearch
 set hlsearch
 nnoremap <Leader><CR> :nohlsearch<CR>
 
-" команды в йцукен раскладке
-set keymap=russian-jcukenwin
-set iminsert=0
-set imsearch=0
-
 " высота строки набора команд
 set cmdheight=1
 set laststatus=2
