@@ -19,6 +19,7 @@
                           markdown-mode
                           omnisharp
                           erlang
+                          intero
                           irony company-irony company-irony-c-headers flycheck-irony
                           evil evil-leader evil-visualstar evil-terminal-cursor-changer
                           ace-jump-mode ace-jump-buffer
@@ -145,7 +146,10 @@
   "My csharp mode hook."
   (setq omnisharp-eldoc-support nil)
   (setq omnisharp-server-executable-path "~/Programming/omnisharp-server/OmniSharp/bin/Debug/OmniSharp.exe")
-  (omnisharp-mode))
+  (omnisharp-mode)
+  (evil-leader/set-key
+    "gt" 'omnisharp-go-to-definition
+    "gT" 'omnisharp-go-to-definition-other-window))
 (add-hook 'csharp-mode-hook 'my/csharp-mode-hook)
 (eval-after-load 'company
   '(add-to-list 'company-backends 'company-omnisharp))
@@ -156,6 +160,18 @@
 
 (require 'erlang-start)
 (setq flycheck-erlang-include-path '("../include/"))
+
+;; --------------------------------------
+;; haskell-mode
+;; --------------------------------------
+
+(require 'intero)
+(defun my/haskell-mode-hook ()
+  "My haskell mode hook."
+  (intero-mode)
+  (evil-leader/set-key
+    "gt" 'intero-goto-definition))
+(add-hook 'haskell-mode-hook 'my/haskell-mode-hook)
 
 ;; --------------------------------------
 ;; irony-mode
@@ -220,8 +236,6 @@
   "bs"  'split-window-vertically
   "bv"  'split-window-horizontally
   "k"   'kill-this-buffer
-  "gt"  'omnisharp-go-to-definition
-  "gT"  'omnisharp-go-to-definition-other-window
   "\\b" 'ace-jump-buffer
   "\\w" 'ace-jump-word-mode)
 (global-evil-leader-mode +1)
@@ -270,6 +284,7 @@
 ;; --------------------------------------
 ;; auto package stuff
 ;; --------------------------------------
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -277,11 +292,12 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-	(evil-terminal-cursor-changer zenburn-theme smooth-scrolling osx-clipboard omnisharp neotree markdown-mode helm-projectile helm-company flycheck-irony fiplr evil-visualstar evil-leader erlang company-irony-c-headers company-irony cmake-project cmake-mode ace-jump-mode ace-jump-buffer))))
+	(zenburn-theme smooth-scrolling osx-clipboard omnisharp neotree markdown-mode helm-projectile helm-company flycheck-irony fiplr evil-visualstar evil-terminal-cursor-changer evil-leader erlang company-irony-c-headers company-irony cmake-project cmake-mode ace-jump-mode ace-jump-buffer))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
 ;;; .emacs ends here
