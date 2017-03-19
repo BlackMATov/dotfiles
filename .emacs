@@ -292,7 +292,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-	(zenburn-theme smooth-scrolling osx-clipboard omnisharp neotree markdown-mode helm-projectile helm-company flycheck-irony fiplr evil-visualstar evil-terminal-cursor-changer evil-leader erlang company-irony-c-headers company-irony cmake-project cmake-mode ace-jump-mode ace-jump-buffer))))
+	(zenburn-theme smooth-scrolling osx-clipboard omnisharp neotree markdown-mode helm-projectile helm-company flycheck-irony fiplr evil-visualstar evil-terminal-cursor-changer evil-leader erlang intero company-irony-c-headers company-irony cmake-project cmake-mode ace-jump-mode ace-jump-buffer))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
