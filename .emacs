@@ -57,6 +57,7 @@
 (setq-default c-basic-offset 4)
 (setq-default truncate-lines t)
 
+(setq vc-follow-symlinks t)
 (setq auto-save-default nil)
 (setq make-backup-files nil)
 
