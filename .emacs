@@ -171,6 +171,10 @@
   "My haskell mode hook."
   (intero-mode)
   (evil-leader/set-key
+	"ro" 'intero-repl
+	"rl" 'intero-repl-load
+	"rr" 'intero-repl-restart
+	"rc" 'intero-repl-clear-buffer
     "gt" 'intero-goto-definition))
 (add-hook 'haskell-mode-hook 'my/haskell-mode-hook)
 
@@ -183,6 +187,7 @@
   "My irony mode hook."
   (setq irony-additional-clang-options '("-std=c++14" "-stdlib=libc++"))
   (setq flycheck-clang-args '("-std=c++14" "-stdlib=libc++"))
+  (setq flycheck-clang-standard-library "libc++")
   (setq flycheck-clang-language-standard "c++14")
   (define-key irony-mode-map [remap completion-at-point]
     'irony-completion-at-point-async)
