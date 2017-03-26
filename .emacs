@@ -197,7 +197,8 @@
 
   (evil-leader/set-key
     "ta" 'org-table-align
-    "tc" 'org-table-create))
+    "tc" 'org-table-create
+    "tt" 'org-show-todo-tree))
 (add-hook 'org-mode-hook 'my/org-mode-hook)
 
 ;; --------------------------------------
