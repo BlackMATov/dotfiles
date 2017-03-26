@@ -133,6 +133,61 @@
 (require 'helm-company)
 
 ;; --------------------------------------
+;; org-mode
+;; --------------------------------------
+
+(require 'org)
+
+(define-key org-mode-map (kbd "TAB") nil)
+(define-key org-mode-map (kbd "<S-tab>") nil)
+(define-key org-mode-map (kbd "<backtab>") nil)
+
+(define-key org-mode-map (kbd "<M-S-up>") nil)
+(define-key org-mode-map (kbd "<M-S-down>") nil)
+
+(define-key org-mode-map (kbd "<M-up>") nil)
+(define-key org-mode-map (kbd "<M-down>") nil)
+
+(define-key org-mode-map (kbd "<M-S-left>") nil)
+(define-key org-mode-map (kbd "<M-S-right>") nil)
+
+(define-key org-mode-map (kbd "<M-left>") nil)
+(define-key org-mode-map (kbd "<M-right>") nil)
+
+(define-key org-mode-map (kbd "<S-up>") nil)
+(define-key org-mode-map (kbd "<S-down>") nil)
+(define-key org-mode-map (kbd "<S-left>") nil)
+(define-key org-mode-map (kbd "<S-right>") nil)
+
+(define-key org-mode-map (kbd "<C-up>") nil)
+(define-key org-mode-map (kbd "<C-down>") nil)
+
+(define-key org-mode-map (kbd "C-<tab>") nil)
+(define-key org-mode-map (kbd "C-S-<tab>") nil)
+
+(defun my/org-mode-hook ()
+  "My org mode hook."
+  (org-indent-mode t)
+  (evil-local-set-key 'normal (kbd "]]") 'org-forward-heading-same-level)
+  (evil-local-set-key 'normal (kbd "[[") 'org-backward-heading-same-level)
+
+  (evil-local-set-key 'normal (kbd "SPC") 'org-todo)
+  (evil-local-set-key 'normal (kbd "RET") 'org-cycle)
+
+  (evil-local-set-key 'normal (kbd "TAB") 'org-metaright)
+  (evil-local-set-key 'normal (kbd "S-<tab>") 'org-metaleft)
+  (evil-local-set-key 'normal (kbd "<backtab>") 'org-metaleft)
+
+  (evil-local-set-key 'visual (kbd "TAB") 'org-metaright)
+  (evil-local-set-key 'visual (kbd "S-<tab>") 'org-metaleft)
+  (evil-local-set-key 'visual (kbd "<backtab>") 'org-metaleft)
+
+  (evil-leader/set-key
+    "ta" 'org-table-align
+	"tc" 'org-table-create))
+(add-hook 'org-mode-hook 'my/org-mode-hook)
+
+;; --------------------------------------
 ;; markdown-mode
 ;; --------------------------------------
 
