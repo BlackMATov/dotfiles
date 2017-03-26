@@ -11,7 +11,7 @@
 ;; auto install
 ;; --------------------------------------
 
-(defvar my/package-list '(fiplr undo-tree zenburn-theme osx-clipboard smooth-scrolling
+(defvar my/package-list '(fiplr undo-tree zenburn-theme osx-clipboard smooth-scrolling reverse-im
                           cmake-mode cmake-project
                           projectile helm-projectile
                           company flycheck
@@ -55,6 +55,9 @@
 
 (setq-default tab-width 4)
 (setq-default c-basic-offset 4)
+(setq-default standart-indent 4)
+(setq-default lisp-body-indent 2)
+
 (setq-default truncate-lines t)
 
 (setq vc-follow-symlinks t)
@@ -99,19 +102,9 @@
 (add-hook 'smooth-scrolling-mode-hook 'my/smooth-scrolling-mode-hook)
 (smooth-scrolling-mode +1)
 
-;; package cmake-mode
-(require 'cmake-mode)
-
-;; package cmake-project
-(require 'cmake-project)
-
-;; package projectile
-(require 'projectile)
-(projectile-mode +1)
-
-;; package helm-projectile
-(require 'helm-projectile)
-(helm-projectile-on)
+;; packages reverse-im
+(require 'reverse-im)
+(reverse-im-activate "russian-computer")
 
 ;; package company
 (require 'company)
@@ -125,12 +118,32 @@
 (require 'flycheck)
 (global-flycheck-mode +1)
 
-;; package helm
+;; --------------------------------------
+;; cmake-mode
+;; --------------------------------------
+
+(require 'cmake-mode)
+
+(require 'cmake-project)
+
+;; --------------------------------------
+;; helm
+;; --------------------------------------
+
 (require 'helm)
 (helm-mode +1)
 
-;; package helm-company
 (require 'helm-company)
+
+;; --------------------------------------
+;; projectile
+;; --------------------------------------
+
+(require 'projectile)
+(projectile-mode +1)
+
+(require 'helm-projectile)
+(helm-projectile-on)
 
 ;; --------------------------------------
 ;; org-mode
@@ -184,7 +197,7 @@
 
   (evil-leader/set-key
     "ta" 'org-table-align
-	"tc" 'org-table-create))
+    "tc" 'org-table-create))
 (add-hook 'org-mode-hook 'my/org-mode-hook)
 
 ;; --------------------------------------
@@ -226,10 +239,10 @@
   "My haskell mode hook."
   (intero-mode)
   (evil-leader/set-key
-	"ro" 'intero-repl
-	"rl" 'intero-repl-load
-	"rr" 'intero-repl-restart
-	"rc" 'intero-repl-clear-buffer
+    "ro" 'intero-repl
+    "rl" 'intero-repl-load
+    "rr" 'intero-repl-restart
+    "rc" 'intero-repl-clear-buffer
     "gt" 'intero-goto-definition))
 (add-hook 'haskell-mode-hook 'my/haskell-mode-hook)
 
@@ -353,7 +366,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-	(zenburn-theme smooth-scrolling osx-clipboard omnisharp neotree markdown-mode helm-projectile helm-company flycheck-irony fiplr evil-visualstar evil-terminal-cursor-changer evil-leader erlang intero company-irony-c-headers company-irony cmake-project cmake-mode ace-jump-mode ace-jump-buffer))))
+     (neotree ace-jump-buffer ace-jump-mode evil-terminal-cursor-changer evil-visualstar evil-leader evil flycheck-irony company-irony-c-headers company-irony irony intero erlang omnisharp markdown-mode helm helm-company flycheck company helm-projectile projectile cmake-project cmake-mode reverse-im smooth-scrolling osx-clipboard zenburn-theme undo-tree fiplr))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
