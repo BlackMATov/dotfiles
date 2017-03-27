@@ -156,12 +156,12 @@
   (hs-minor-mode))
 (add-hook 'nxml-mode-hook 'my/nxml-mode-hook)
 (add-to-list 'hs-special-modes-alist
-			 '(nxml-mode
-			   "<!--\\|<[^/>]*[^/]>" ;; regexp for start block
-               "-->\\|</[^/>]*[^/]>" ;; regexp for end block
-               "<!--"
-               nxml-forward-element
-               nil))
+             '(nxml-mode
+                "<!--\\|<[^/>]*[^/]>" ;; regexp for start block
+                "-->\\|</[^/>]*[^/]>" ;; regexp for end block
+                "<!--"
+                nxml-forward-element
+                nil))
 
 ;; --------------------------------------
 ;; org-mode
