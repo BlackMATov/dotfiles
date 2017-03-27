@@ -20,7 +20,7 @@
                           omnisharp
                           erlang
                           intero
-                          irony company-irony company-irony-c-headers flycheck-irony
+                          irony company-irony company-irony-c-headers flycheck-irony modern-cpp-font-lock
                           evil evil-leader evil-visualstar evil-terminal-cursor-changer
                           ace-jump-mode ace-jump-buffer
                           neotree))
@@ -298,6 +298,9 @@
 (eval-after-load 'flycheck
   '(add-hook 'flycheck-mode-hook #'flycheck-irony-setup))
 
+(require 'modern-cpp-font-lock)
+(modern-c++-font-lock-global-mode t)
+
 ;; --------------------------------------
 ;; evil-mode
 ;; --------------------------------------
@@ -385,7 +388,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-     (neotree ace-jump-buffer ace-jump-mode evil-terminal-cursor-changer evil-visualstar evil-leader evil flycheck-irony company-irony-c-headers company-irony irony intero erlang omnisharp markdown-mode helm helm-company flycheck company helm-projectile projectile cmake-project cmake-mode reverse-im smooth-scrolling osx-clipboard zenburn-theme undo-tree fiplr))))
+     (neotree ace-jump-buffer ace-jump-mode evil-terminal-cursor-changer evil-visualstar evil-leader evil flycheck-irony modern-cpp-font-lock company-irony-c-headers company-irony irony intero erlang omnisharp markdown-mode helm helm-company flycheck company helm-projectile projectile cmake-project cmake-mode reverse-im smooth-scrolling osx-clipboard zenburn-theme undo-tree fiplr))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
