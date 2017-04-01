@@ -214,9 +214,13 @@
   (evil-local-set-key 'visual (kbd "<backtab>") 'org-metaleft)
 
   (evil-leader/set-key
-    "ta" 'org-table-align
-    "tc" 'org-table-create
-    "tt" 'org-show-todo-tree))
+    "ta"  'org-table-align
+    "tc"  'org-table-create
+    "ts"  'org-table-sort-lines
+    "tr"  'org-table-recalculate
+    "tir" 'org-table-insert-row
+    "tic" 'org-table-insert-column
+    "tt"  'org-show-todo-tree))
 (add-hook 'org-mode-hook 'my/org-mode-hook)
 
 ;; --------------------------------------
@@ -316,7 +320,7 @@
 
 ;; package evil-visualstar
 (require 'evil-visualstar)
-(global-evil-visualstar-mode +1)
+(global-evil-visualstar-mode t)
 
 ;; package evil-leader
 (require 'evil-leader)
