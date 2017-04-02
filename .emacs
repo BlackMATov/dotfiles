@@ -278,6 +278,7 @@
 (require 'irony)
 (defun my/irony-mode-hook ()
   "My irony mode hook."
+  (hs-minor-mode)
   (setq irony-additional-clang-options '("-std=c++14" "-stdlib=libc++"))
   (setq flycheck-clang-args '("-std=c++14" "-stdlib=libc++"))
   (setq flycheck-clang-standard-library "libc++")
