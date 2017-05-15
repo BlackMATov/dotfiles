@@ -59,6 +59,7 @@
 (setq-default lisp-body-indent 2)
 
 (setq-default truncate-lines t)
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
 
 (setq vc-follow-symlinks t)
 (setq find-file-visit-truename t)
@@ -239,7 +240,7 @@
 (defun my/csharp-mode-hook ()
   "My csharp mode hook."
   (setq omnisharp-eldoc-support nil)
-  (setq omnisharp-server-executable-path "~/Programming/omnisharp-server/OmniSharp/bin/Debug/OmniSharp.exe")
+  (setq omnisharp-server-executable-path "/usr/local/bin/omnisharp")
   (omnisharp-mode)
   (evil-leader/set-key
     "gt" 'omnisharp-go-to-definition
@@ -266,8 +267,8 @@
   (evil-leader/set-key
     "ro" 'intero-repl
     "rl" 'intero-repl-load
-    "rr" 'intero-repl-restart
     "rc" 'intero-repl-clear-buffer
+    "rr" 'intero-restart
     "gt" 'intero-goto-definition))
 (add-hook 'haskell-mode-hook 'my/haskell-mode-hook)
 
@@ -395,7 +396,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-     (neotree ace-jump-buffer ace-jump-mode evil-terminal-cursor-changer evil-visualstar evil-leader evil flycheck-irony modern-cpp-font-lock company-irony-c-headers company-irony irony intero erlang omnisharp markdown-mode helm helm-company flycheck company helm-projectile projectile cmake-project cmake-mode reverse-im smooth-scrolling osx-clipboard zenburn-theme undo-tree fiplr))))
+	(neotree ace-jump-buffer ace-jump-mode evil-terminal-cursor-changer evil-visualstar evil-leader evil flycheck-irony modern-cpp-font-lock company-irony-c-headers company-irony irony intero erlang omnisharp markdown-mode helm helm-company flycheck company helm-projectile projectile cmake-project cmake-mode reverse-im smooth-scrolling osx-clipboard zenburn-theme undo-tree fiplr))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
