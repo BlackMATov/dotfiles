@@ -16,6 +16,7 @@
                           projectile helm-projectile
                           company flycheck
                           helm helm-company
+						  yaml-mode
                           markdown-mode
                           omnisharp
                           erlang
@@ -227,6 +228,12 @@
 (add-hook 'org-mode-hook 'my/org-mode-hook)
 
 ;; --------------------------------------
+;; yaml-mode
+;; --------------------------------------
+
+(require 'yaml-mode)
+
+;; --------------------------------------
 ;; markdown-mode
 ;; --------------------------------------
 
@@ -396,7 +403,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-	(neotree ace-jump-buffer ace-jump-mode evil-terminal-cursor-changer evil-visualstar evil-leader evil flycheck-irony modern-cpp-font-lock company-irony-c-headers company-irony irony intero erlang omnisharp markdown-mode helm helm-company flycheck company helm-projectile projectile cmake-project cmake-mode reverse-im smooth-scrolling osx-clipboard zenburn-theme undo-tree fiplr))))
+	(yaml-mode neotree ace-jump-buffer ace-jump-mode evil-terminal-cursor-changer evil-visualstar evil-leader evil flycheck-irony modern-cpp-font-lock company-irony-c-headers company-irony irony intero erlang omnisharp markdown-mode helm helm-company flycheck company helm-projectile projectile cmake-project cmake-mode reverse-im smooth-scrolling osx-clipboard zenburn-theme undo-tree fiplr))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
