@@ -353,7 +353,6 @@ let g:airline#extensions#whitespace#enabled=0
 " -------------------------------------
 
 let g:ycm_global_ycm_extra_conf="$HOME/.vim/.ycm_extra_conf.py"
-let g:ycm_path_to_python_interpreter="/usr/local/bin/python"
 let g:ycm_key_list_select_completion=[]
 let g:ycm_key_list_previous_completion=[]
 let g:ycm_semantic_triggers={'haskell':['.']}
