@@ -1,5 +1,5 @@
 #!/bin/bash
 
-ln .vimrc ~/.vimrc
-ln .emacs ~/.emacs
-ln .ideavimrc ~/.ideavimrc
+ln -f .vimrc ~/.vimrc
+ln -f .emacs ~/.emacs
+ln -f .ideavimrc ~/.ideavimrc
