@@ -80,13 +80,10 @@ if has('unix')
 endif
 
 " -------------------------------------
-" YCM (C, C++, C#, JS)
+" C#
 " -------------------------------------
 
 if has('unix')
-  Bundle 'jeaye/color_coded'
-  Bundle 'rdnetto/YCM-Generator'
-  Bundle 'Valloric/YouCompleteMe'
   Bundle 'OmniSharp/omnisharp-vim'
 endif
 
@@ -103,8 +100,6 @@ if has('unix')
   function! MyBundleMakeFunc()
     execute "!(cd $HOME/.vim/bundle/vimproc.vim && make clean && make)"
     execute "!(cd $HOME/.vim/bundle/omnisharp-vim/server && xbuild)"
-    execute "!(cd $HOME/.vim/bundle/YouCompleteMe && ./install.py --clang-completer --tern-completer)"
-    execute "!(cd $HOME/.vim/bundle/color_coded && cmake . && make && make install)"
   endfunction
   command! MyBundleMake call MyBundleMakeFunc()
 endif
@@ -200,12 +195,6 @@ colorscheme lucius
 
 " скрываем фон вертикального разделителя между окнами
 exe 'hi! VertSplit ctermbg=NONE guibg=NONE'
-
-" для color_coded
-exe 'hi! link Member Boolean'
-exe 'hi! link Variable Boolean'
-exe 'hi! link Namespace Boolean'
-exe 'hi! link EnumConstant Boolean'
 
 " кодировочки
 set encoding=utf-8
@@ -344,21 +333,8 @@ let g:airline_left_sep=''
 let g:airline_right_sep=''
 let g:airline_theme='bubblegum'
 
-let g:airline#extensions#ycm#enabled=1
 let g:airline#extensions#syntastic#enabled=1
 let g:airline#extensions#whitespace#enabled=0
-
-" -------------------------------------
-" youcompleteme
-" -------------------------------------
-
-let g:ycm_global_ycm_extra_conf="$HOME/.vim/.ycm_extra_conf.py"
-let g:ycm_key_list_select_completion=[]
-let g:ycm_key_list_previous_completion=[]
-let g:ycm_semantic_triggers={'haskell':['.']}
-let g:ycm_max_diagnostics_to_display=30
-
-autocmd FileType cpp nnoremap <leader>gt :YcmCompleter GoTo<cr>
 
 " -------------------------------------
 " omnisharp
