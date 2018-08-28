@@ -174,6 +174,7 @@ set cmdheight=1
 set laststatus=2
 
 " отступы и табы
+set expandtab
 set autoindent
 set smartindent
 set shiftwidth=4

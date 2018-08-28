@@ -58,6 +58,7 @@
 (setq-default c-basic-offset 4)
 (setq-default standart-indent 4)
 (setq-default lisp-body-indent 2)
+(setq-default indent-tabs-mode nil)
 
 (setq-default truncate-lines t)
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
