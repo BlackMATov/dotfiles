@@ -80,14 +80,6 @@ if has('unix')
 endif
 
 " -------------------------------------
-" C#
-" -------------------------------------
-
-if has('unix')
-  Bundle 'OmniSharp/omnisharp-vim'
-endif
-
-" -------------------------------------
 " BundleMake
 " -------------------------------------
 
@@ -99,7 +91,6 @@ if has('unix')
 
   function! MyBundleMakeFunc()
     execute "!(cd $HOME/.vim/bundle/vimproc.vim && make clean && make)"
-    execute "!(cd $HOME/.vim/bundle/omnisharp-vim/server && xbuild)"
   endfunction
   command! MyBundleMake call MyBundleMakeFunc()
 endif
@@ -336,22 +327,6 @@ let g:airline_theme='bubblegum'
 
 let g:airline#extensions#syntastic#enabled=1
 let g:airline#extensions#whitespace#enabled=0
-
-" -------------------------------------
-" omnisharp
-" -------------------------------------
-
-autocmd CursorHold *.cs call OmniSharp#TypeLookupWithoutDocumentation()
-
-autocmd FileType cs nnoremap <leader>tt :OmniSharpTypeLookup<cr>
-autocmd FileType cs nnoremap <leader>th :OmniSharpHighlightTypes<cr>
-autocmd FileType cs nnoremap <leader>gt :OmniSharpGotoDefinition<cr>
-
-autocmd FileType cs nnoremap <leader>fi :OmniSharpFindImplementations<cr>
-autocmd FileType cs nnoremap <leader>ft :OmniSharpFindType<cr>
-autocmd FileType cs nnoremap <leader>fs :OmniSharpFindSymbol<cr>
-autocmd FileType cs nnoremap <leader>fu :OmniSharpFindUsages<cr>
-autocmd FileType cs nnoremap <leader>fm :OmniSharpFindMembers<cr>
 
 " -------------------------------------
 " haskell
