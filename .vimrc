@@ -19,7 +19,6 @@ Bundle 'Shougo/vimproc.vim'
 " COMMON
 " -------------------------------------
 
-Bundle 'mhinz/vim-startify'
 Bundle 'vim-syntastic/syntastic'
 Bundle 'vim-airline/vim-airline'
 Bundle 'vim-airline/vim-airline-themes'
@@ -266,15 +265,6 @@ nnoremap <S-Up>    <C-W>k
 let g:syntastic_enable_signs=1
 let g:syntastic_cpp_compiler='clang++'
 let g:syntastic_cpp_compiler_options=' -std=c++14 -stdlib=libc++'
-
-" -------------------------------------
-" startify
-" -------------------------------------
-
-let g:startify_list_order = ['sessions', 'files', 'dir', 'bookmarks', 'commands']
-let g:startify_session_before_save = [
-    \ 'silent! NERDTreeTabsClose'
-    \ ]
 
 " -------------------------------------
 " nerdtree
