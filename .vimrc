@@ -206,6 +206,10 @@ nnoremap * *N
 map <Space> /
 map <S-Space> ?
 
+" splits
+set splitbelow
+set splitright
+
 " -------------------------------------
 " move text
 " -------------------------------------
