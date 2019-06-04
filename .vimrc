@@ -45,6 +45,7 @@ Bundle 'Xuyuanp/nerdtree-git-plugin'
 " THEMES
 " -------------------------------------
 
+Bundle 'bfrg/vim-cpp-modern'
 Bundle 'jonathanfilip/vim-lucius'
 
 " -------------------------------------
