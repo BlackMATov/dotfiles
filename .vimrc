@@ -27,7 +27,6 @@ Bundle 'yegappan/grep'
 Bundle 'ctrlpvim/ctrlp.vim'
 Bundle 'jlanzarotta/bufexplorer'
 
-Bundle 'godlygeek/tabular'
 Bundle 'simnalamburt/vim-mundo'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'scrooloose/nerdcommenter'
@@ -54,29 +53,6 @@ Bundle 'jonathanfilip/vim-lucius'
 
 Bundle 'tpope/vim-fugitive'
 Bundle 'ludovicchabant/vim-lawrencium'
-
-" -------------------------------------
-" HASKELL
-" -------------------------------------
-
-if has('unix')
-  Bundle 'eagletmt/neco-ghc'
-  Bundle 'eagletmt/ghcmod-vim'
-  Bundle 'Twinside/vim-hoogle'
-  Bundle 'neovimhaskell/haskell-vim'
-endif
-
-" -------------------------------------
-" ERLANG
-" -------------------------------------
-
-if has('unix')
-  Bundle 'vim-erlang/vim-erlang-tags'
-  Bundle 'vim-erlang/erlang-motions.vim'
-  Bundle 'vim-erlang/vim-erlang-runtime'
-  Bundle 'vim-erlang/vim-erlang-compiler'
-  Bundle 'vim-erlang/vim-erlang-omnicomplete'
-endif
 
 " -------------------------------------
 " BundleMake
@@ -174,12 +150,6 @@ set tabstop=4
 " сколько строк оставлять при скроллинге
 set scrolloff=4
 
-" шрифт
-if has("win32")
-  set guifont=Anonymous\ Pro:h12
-  set antialias
-endif
-
 " цветовая схема
 set background=dark
 colorscheme lucius
@@ -264,7 +234,7 @@ nnoremap <S-Up>    <C-W>k
 
 let g:syntastic_enable_signs=1
 let g:syntastic_cpp_compiler='clang++'
-let g:syntastic_cpp_compiler_options=' -std=c++14 -stdlib=libc++'
+let g:syntastic_cpp_compiler_options=' -std=c++17 -stdlib=libc++'
 
 " -------------------------------------
 " nerdtree
@@ -291,12 +261,6 @@ let g:multi_cursor_start_key='<C-n>'
 let g:multi_cursor_start_word_key='g<C-n>'
 
 " -------------------------------------
-" tabular
-" -------------------------------------
-
-vmap <Leader>a :Tabularize /
-
-" -------------------------------------
 " mundo
 " -------------------------------------
 
@@ -317,17 +281,6 @@ let g:airline_theme='bubblegum'
 
 let g:airline#extensions#syntastic#enabled=1
 let g:airline#extensions#whitespace#enabled=0
-
-" -------------------------------------
-" haskell
-" -------------------------------------
-
-let g:haddock_browser="open"
-let g:haddock_browser_callformat="%s %s"
-let g:necoghc_enable_detailed_browse=1
-let g:haskellmode_completion_ghc=0
-autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
-autocmd BufWritePost *.hs GhcModCheckAndLintAsync
 
 " -------------------------------------
 " clever tab
