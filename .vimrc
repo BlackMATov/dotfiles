@@ -23,14 +23,11 @@ Bundle 'vim-syntastic/syntastic'
 Bundle 'vim-airline/vim-airline'
 Bundle 'vim-airline/vim-airline-themes'
 
-Bundle 'yegappan/grep'
 Bundle 'ctrlpvim/ctrlp.vim'
 Bundle 'jlanzarotta/bufexplorer'
 
-Bundle 'simnalamburt/vim-mundo'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'scrooloose/nerdcommenter'
-Bundle 'dhruvasagar/vim-table-mode'
 Bundle 'terryma/vim-multiple-cursors'
 
 " -------------------------------------
@@ -47,13 +44,6 @@ Bundle 'Xuyuanp/nerdtree-git-plugin'
 
 Bundle 'bfrg/vim-cpp-modern'
 Bundle 'jonathanfilip/vim-lucius'
-
-" -------------------------------------
-" VCS
-" -------------------------------------
-
-Bundle 'tpope/vim-fugitive'
-Bundle 'ludovicchabant/vim-lawrencium'
 
 " -------------------------------------
 " BundleMake
@@ -237,9 +227,8 @@ nnoremap <S-Up>    <C-W>k
 " syntastic
 " -------------------------------------
 
-let g:syntastic_enable_signs=1
-let g:syntastic_cpp_compiler='clang++'
-let g:syntastic_cpp_compiler_options=' -std=c++17 -stdlib=libc++'
+let g:syntastic_c_config_file = '.clang_complete'
+let g:syntastic_cpp_config_file = '.clang_complete'
 
 " -------------------------------------
 " nerdtree
@@ -257,24 +246,6 @@ let g:NERDTreeIndicatorMapCustom={
     \ "Dirty"     : "*",
     \ "Clean"     : "&",
     \ "Unknown"   : "?"}
-
-" -------------------------------------
-" multiple-cursors
-" -------------------------------------
-
-let g:multi_cursor_start_key='<C-n>'
-let g:multi_cursor_start_word_key='g<C-n>'
-
-" -------------------------------------
-" mundo
-" -------------------------------------
-
-let g:mundo_right=1
-let g:mundo_width=40
-let g:mundo_preview_bottom=1
-let g:mundo_preview_height=15
-let g:mundo_close_on_revert=1
-map <Leader>u :MundoToggle<CR>
 
 " -------------------------------------
 " vim-airline
