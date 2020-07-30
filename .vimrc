@@ -28,7 +28,7 @@ Bundle 'jlanzarotta/bufexplorer'
 
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'scrooloose/nerdcommenter'
-Bundle 'terryma/vim-multiple-cursors'
+Bundle 'mg979/vim-visual-multi'
 
 " -------------------------------------
 " NERDTREE
