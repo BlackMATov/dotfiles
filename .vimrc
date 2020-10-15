@@ -28,7 +28,6 @@ Bundle 'jlanzarotta/bufexplorer'
 
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'scrooloose/nerdcommenter'
-Bundle 'mg979/vim-visual-multi'
 
 " -------------------------------------
 " NERDTREE
@@ -236,7 +235,7 @@ let g:syntastic_cpp_config_file = '.clang_complete'
 
 map <Leader>n :NERDTreeTabsToggle<CR>
 let g:nerdtree_tabs_open_on_gui_startup=0
-let g:NERDTreeIndicatorMapCustom={
+let g:NERDTreeGitStatusIndicatorMapCustom={
     \ "Modified"  : "*",
     \ "Staged"    : "+",
     \ "Untracked" : "?",
