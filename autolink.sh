@@ -1,5 +1,5 @@
 #!/bin/bash
+set -e
+DIR="$( cd "$( dirname "${BASH_SOURCE}" )" && pwd )"
 
-ln -f .vimrc ~/.vimrc
-ln -f .emacs ~/.emacs
-ln -f .ideavimrc ~/.ideavimrc
+ln -f "${DIR}/.vimrc" "${HOME}/.vimrc"
