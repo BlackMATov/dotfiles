@@ -20,6 +20,7 @@ vim.cmd([[
 
 local packer_status, packer = pcall(require, "packer")
 if not packer_status then
+    print("packer not found")
     return
 end
 
@@ -31,6 +32,7 @@ return require('packer').startup(function(use)
     use 'bluz71/vim-nightfly-colors'
     use 'nvim-tree/nvim-web-devicons'
 
+    use 'numToStr/comment.nvim'
     use 'nvim-lualine/lualine.nvim'
     use 'nvim-tree/nvim-tree.lua'
     use 'mg979/vim-visual-multi'

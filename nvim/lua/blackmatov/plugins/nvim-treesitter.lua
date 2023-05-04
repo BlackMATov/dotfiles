@@ -1,5 +1,6 @@
 local nvim_treesitter_status, nvim_treesitter = pcall(require, "nvim-treesitter")
 if not nvim_treesitter_status then
+    print("nvim-treesitter not found")
     return
 end
 
@@ -7,6 +8,7 @@ nvim_treesitter.setup()
 
 local nvim_treesitter_configs_status, nvim_treesitter_configs = pcall(require, "nvim-treesitter.configs")
 if not nvim_treesitter_configs_status then
+    print("nvim-treesitter.configs not found")
     return
 end
 
