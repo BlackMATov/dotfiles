@@ -15,3 +15,6 @@ keymap.set("n", "<S-Left>", "<C-W>h")
 keymap.set("n", "<S-Right>", "<C-W>l")
 keymap.set("n", "<S-Up>", "<C-W>k")
 keymap.set("n", "<S-Down>", "<C-W>j")
+
+keymap.set("n", "<leader>s", "<C-W>s")
+keymap.set("n", "<leader>v", "<C-W>v")
