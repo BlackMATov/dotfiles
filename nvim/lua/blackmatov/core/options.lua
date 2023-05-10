@@ -7,6 +7,8 @@ opt.shiftwidth = 4
 opt.softtabstop = 4
 opt.tabstop = 4
 
+opt.scrolloff = 4
+
 opt.autoindent = true
 opt.expandtab = true
 opt.smartindent = true
@@ -28,3 +30,6 @@ opt.clipboard:append("unnamedplus")
 
 opt.splitbelow = true
 opt.splitright = true
+
+opt.backup = false
+opt.swapfile = false
