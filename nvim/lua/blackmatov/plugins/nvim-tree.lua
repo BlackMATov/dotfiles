@@ -12,5 +12,8 @@ nvimtree.setup({
         open_file = {
             resize_window = false
         }
+    },
+    update_focused_file = {
+        enable = true
     }
 })
