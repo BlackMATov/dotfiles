@@ -13,6 +13,9 @@ nvimtree.setup({
             resize_window = false
         }
     },
+    git = {
+        enable = false,
+    },
     update_focused_file = {
         enable = true
     }
