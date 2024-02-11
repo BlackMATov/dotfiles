@@ -49,19 +49,19 @@ nvim_treesitter_configs.setup({
                 ["[C"] = "@class.outer",
             },
         },
-    },
-    select = {
-        enable = true,
-        lookahead = true,
-        keymaps = {
-            ["af"] = "@function.outer",
-            ["if"] = "@function.inner",
-            ["ac"] = "@class.outer",
-            ["ic"] = "@class.inner",
-            ["ia"] = "@parameter.inner",
-            ["aa"] = "@parameter.outer",
-            ["ib"] = "@block.inner",
-            ["ab"] = "@block.outer",
+        select = {
+            enable = true,
+            lookahead = true,
+            keymaps = {
+                ["af"] = "@function.outer",
+                ["if"] = "@function.inner",
+                ["ac"] = "@class.outer",
+                ["ic"] = "@class.inner",
+                ["ia"] = "@parameter.inner",
+                ["aa"] = "@parameter.outer",
+                ["ib"] = "@block.inner",
+                ["ab"] = "@block.outer",
+            },
         },
     },
 })
