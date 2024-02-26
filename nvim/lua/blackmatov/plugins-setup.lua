@@ -37,8 +37,8 @@ return require('packer').startup(function(use)
     use 'nvim-tree/nvim-tree.lua'
     use 'mg979/vim-visual-multi'
 
-    use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
     use { 'nvim-telescope/telescope.nvim', branch = '0.1.x' }
+    use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
 
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
     use { 'nvim-treesitter/nvim-treesitter-textobjects' }
