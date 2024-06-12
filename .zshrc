@@ -1,6 +1,7 @@
+export LANG="en_US.UTF-8"
+
 export ZSH="$HOME/.oh-my-zsh"
 
-plugins=(sudo pyenv)
 ZSH_THEME="robbyrussell"
 source $ZSH/oh-my-zsh.sh
 
