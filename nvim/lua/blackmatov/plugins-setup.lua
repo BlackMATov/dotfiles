@@ -36,6 +36,7 @@ return require('packer').startup(function(use)
     use 'nvim-lualine/lualine.nvim'
     use 'nvim-tree/nvim-tree.lua'
     use 'mg979/vim-visual-multi'
+    use 'justinmk/vim-sneak'
 
     use { 'nvim-telescope/telescope.nvim', branch = '0.1.x' }
     use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
