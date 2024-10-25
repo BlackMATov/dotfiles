@@ -3,6 +3,7 @@ vim.g.mapleader = ' '
 local keymap = vim.keymap
 
 keymap.set("n", "<leader><CR>", ":nohl<CR>")
+
 keymap.set("n", "<leader>nn", ":NvimTreeToggle<CR>")
 keymap.set("n", "<leader>nf", ":NvimTreeFindFile<CR>")
 
@@ -11,6 +12,7 @@ keymap.set("n", "<leader>fs", ":Telescope live_grep<CR>")
 keymap.set("n", "<leader>fc", ":Telescope grep_string<CR>")
 keymap.set("n", "<leader>fb", ":Telescope buffers<CR>")
 keymap.set("n", "<leader>fh", ":Telescope help_tags<CR>")
+keymap.set("n", "<leader>fq", ":Telescope cmdline<CR>")
 
 keymap.set("n", "<S-Left>", "<C-W>h")
 keymap.set("n", "<S-Right>", "<C-W>l")
