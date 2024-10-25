@@ -11,12 +11,12 @@ end
 
 local packer_bootstrap = ensure_packer()
 
-vim.cmd([[
+vim.cmd [[
   augroup packer_user_config
     autocmd!
     autocmd BufWritePost plugins-setup.lua source <afile> | PackerCompile
   augroup end
-]])
+]]
 
 local packer_status, packer = pcall(require, "packer")
 if not packer_status then
@@ -24,7 +24,7 @@ if not packer_status then
     return
 end
 
-return require('packer').startup(function(use)
+return packer.startup(function(use)
     use 'wbthomason/packer.nvim'
 
     use 'nvim-lua/plenary.nvim'
@@ -38,14 +38,8 @@ return require('packer').startup(function(use)
     use 'mg979/vim-visual-multi'
     use 'justinmk/vim-sneak'
 
-    use 'neovim/nvim-lspconfig'
-
-    use 'williamboman/mason.nvim'
-    use 'williamboman/mason-lspconfig.nvim'
-
     use 'hrsh7th/nvim-cmp'
     use 'hrsh7th/cmp-buffer'
-    use 'hrsh7th/cmp-nvim-lsp'
     use 'hrsh7th/cmp-path'
 
     use { 'nvim-telescope/telescope.nvim', branch = '0.1.x' }
