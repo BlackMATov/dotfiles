@@ -33,6 +33,7 @@ return packer.startup(function(use)
     use 'nvim-tree/nvim-web-devicons'
 
     use 'numToStr/comment.nvim'
+    use 'akinsho/bufferline.nvim'
     use 'nvim-lualine/lualine.nvim'
     use 'nvim-tree/nvim-tree.lua'
     use 'mg979/vim-visual-multi'

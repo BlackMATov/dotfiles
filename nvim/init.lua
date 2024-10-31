@@ -4,6 +4,7 @@ require("blackmatov.core.colors")
 require("blackmatov.core.keymaps")
 require("blackmatov.core.options")
 
+require("blackmatov.plugins.bufferline")
 require("blackmatov.plugins.comment")
 require("blackmatov.plugins.lualine")
 require("blackmatov.plugins.nvim-cmp")
