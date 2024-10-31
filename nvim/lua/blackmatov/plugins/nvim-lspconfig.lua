@@ -19,8 +19,6 @@ if lspconfig.lua_ls then
             Lua = {
                 completion = {
                     autoRequire = false,
-                    callSnippet = "Disable",
-                    keywordSnippet = "Disable",
                 },
                 runtime = {
                     pathStrict = true,
