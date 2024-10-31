@@ -41,8 +41,13 @@ return packer.startup(function(use)
     use 'kylechui/nvim-surround'
 
     use 'hrsh7th/nvim-cmp'
+    use 'hrsh7th/cmp-nvim-lsp'
     use 'hrsh7th/cmp-buffer'
     use 'hrsh7th/cmp-path'
+
+    use 'williamboman/mason.nvim'
+    use 'williamboman/mason-lspconfig.nvim'
+    use 'neovim/nvim-lspconfig'
 
     use { 'nvim-telescope/telescope.nvim', branch = '0.1.x' }
     use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
