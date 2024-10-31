@@ -38,6 +38,7 @@ return packer.startup(function(use)
     use 'nvim-tree/nvim-tree.lua'
     use 'mg979/vim-visual-multi'
     use 'justinmk/vim-sneak'
+    use 'kylechui/nvim-surround'
 
     use 'hrsh7th/nvim-cmp'
     use 'hrsh7th/cmp-buffer'
