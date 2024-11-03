@@ -4,7 +4,8 @@ vim.g.maplocalleader = ' '
 local keymap = vim.keymap
 local kmopts = { noremap = true, silent = true }
 
-keymap.set("n", "<leader><CR>", ":nohl<CR>", kmopts)
+keymap.set("n", "<Esc>", ":nohl<CR>", kmopts)
+keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", kmopts)
 
 keymap.set("n", "<leader>nn", ":NvimTreeToggle<CR>", kmopts)
 keymap.set("n", "<leader>nf", ":NvimTreeFindFile<CR>", kmopts)
@@ -16,6 +17,13 @@ keymap.set("n", "<leader>fb", ":Telescope buffers<CR>", kmopts)
 keymap.set("n", "<leader>fh", ":Telescope help_tags<CR>", kmopts)
 keymap.set("n", "<leader>fq", ":Telescope cmdline<CR>", kmopts)
 keymap.set("n", "<leader>fd", ":Telescope diagnostics<CR>", kmopts)
+
+keymap.set("n", "<leader>ld", ":Telescope lsp_definitions<CR>", kmopts)
+keymap.set("n", "<leader>lt", ":Telescope lsp_type_definitions<CR>", kmopts)
+keymap.set("n", "<leader>li", ":Telescope lsp_implementations<CR>", kmopts)
+keymap.set("n", "<leader>lr", ":Telescope lsp_references<CR>", kmopts)
+
+keymap.set("n", "<leader>r", vim.lsp.buf.rename, kmopts)
 
 keymap.set("n", "<leader>to", ":tabnew<CR>", kmopts)
 keymap.set("n", "<leader>tx", ":tabclose<CR>", kmopts)
