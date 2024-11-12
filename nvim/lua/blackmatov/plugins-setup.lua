@@ -29,7 +29,7 @@ return packer.startup(function(use)
 
     use 'nvim-lua/plenary.nvim'
 
-    use 'bluz71/vim-nightfly-colors'
+    use 'neanias/everforest-nvim'
     use 'nvim-tree/nvim-web-devicons'
 
     use 'numToStr/comment.nvim'

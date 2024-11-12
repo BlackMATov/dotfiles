@@ -1,5 +1,8 @@
-local colorscheme_status, _ = pcall(vim.cmd, "colorscheme nightfly")
-if not colorscheme_status then
-    print("colorscheme not found!")
+local everforest_status, everforest = pcall(require, "everforest")
+if not everforest_status then
+    print("everforest not found")
     return
 end
+
+everforest.setup()
+everforest.load()
