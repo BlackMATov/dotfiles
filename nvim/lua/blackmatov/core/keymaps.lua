@@ -13,10 +13,11 @@ keymap.set("n", "<leader>nf", ":NvimTreeFindFile<CR>", kmopts)
 keymap.set("n", "<leader>ff", ":Telescope find_files<CR>", kmopts)
 keymap.set("n", "<leader>fs", ":Telescope live_grep<CR>", kmopts)
 keymap.set("n", "<leader>fc", ":Telescope grep_string<CR>", kmopts)
-keymap.set("n", "<leader>fb", ":Telescope buffers<CR>", kmopts)
 keymap.set("n", "<leader>fh", ":Telescope help_tags<CR>", kmopts)
 keymap.set("n", "<leader>fq", ":Telescope cmdline<CR>", kmopts)
 keymap.set("n", "<leader>fd", ":Telescope diagnostics<CR>", kmopts)
+keymap.set("n", "<leader>/", ":Telescope current_buffer_fuzzy_find<CR>", kmopts)
+keymap.set("n", "<leader><leader>", ":Telescope buffers<CR>", kmopts)
 
 keymap.set("n", "<leader>ld", ":Telescope lsp_definitions<CR>", kmopts)
 keymap.set("n", "<leader>lt", ":Telescope lsp_type_definitions<CR>", kmopts)
@@ -38,7 +39,7 @@ keymap.set("n", "<Right>", ":vertical resize +2<CR>", kmopts)
 keymap.set("n", "<Tab>", ":bnext<CR>", kmopts)
 keymap.set("n", "<S-Tab>", ":bprev<CR>", kmopts)
 keymap.set("n", "<leader>b", ":enew<CR>", kmopts)
-keymap.set("n", "<leader>x", ":bdelete!<CR>", kmopts)
+keymap.set("n", "<leader>x", ":b#<bar>bd#<CR>", kmopts)
 
 keymap.set("n", "<C-k>", "<C-w>k", kmopts)
 keymap.set("n", "<C-j>", "<C-w>j", kmopts)
@@ -54,3 +55,9 @@ keymap.set("v", ">", ">gv", kmopts)
 keymap.set("n", "<leader>d", "\"_d", kmopts)
 keymap.set("v", "<leader>d", "\"_d", kmopts)
 keymap.set("x", "<leader>p", "\"_dP", kmopts)
+
+vim.api.nvim_create_autocmd('TextYankPost', {
+    desc = 'Highlight when yanking (copying) text',
+    group = vim.api.nvim_create_augroup('blackmatov-highlight-yank', { clear = true }),
+    callback = function() vim.highlight.on_yank() end,
+})
