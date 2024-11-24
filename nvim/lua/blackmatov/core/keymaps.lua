@@ -1,3 +1,5 @@
+local vim = _G["vim"]
+
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
@@ -19,12 +21,14 @@ keymap.set("n", "<leader>fd", ":Telescope diagnostics<CR>", kmopts)
 keymap.set("n", "<leader>/", ":Telescope current_buffer_fuzzy_find<CR>", kmopts)
 keymap.set("n", "<leader><leader>", ":Telescope buffers<CR>", kmopts)
 
+keymap.set("n", "<leader>lh", vim.lsp.buf.hover, kmopts)
+keymap.set("n", "<leader>ln", vim.lsp.buf.rename, kmopts)
 keymap.set("n", "<leader>ld", ":Telescope lsp_definitions<CR>", kmopts)
-keymap.set("n", "<leader>lt", ":Telescope lsp_type_definitions<CR>", kmopts)
 keymap.set("n", "<leader>li", ":Telescope lsp_implementations<CR>", kmopts)
 keymap.set("n", "<leader>lr", ":Telescope lsp_references<CR>", kmopts)
-
-keymap.set("n", "<leader>r", vim.lsp.buf.rename, kmopts)
+keymap.set("n", "<leader>ls", ":Telescope lsp_document_symbols<CR>", kmopts)
+keymap.set("n", "<leader>lt", ":Telescope lsp_type_definitions<CR>", kmopts)
+keymap.set("n", "<leader>lw", ":Telescope lsp_workspace_symbols<CR>", kmopts)
 
 keymap.set("n", "<leader>to", ":tabnew<CR>", kmopts)
 keymap.set("n", "<leader>tx", ":tabclose<CR>", kmopts)
