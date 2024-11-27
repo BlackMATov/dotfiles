@@ -1,4 +1,6 @@
-local ensure_packer = function()
+local vim = _G["vim"]
+
+local function ensure_packer()
     local fn = vim.fn
     local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
     if fn.empty(fn.glob(install_path)) > 0 then
@@ -39,6 +41,8 @@ return packer.startup(function(use)
     use 'mg979/vim-visual-multi'
     use 'justinmk/vim-sneak'
     use 'kylechui/nvim-surround'
+
+    use 'lewis6991/gitsigns.nvim'
 
     use 'hrsh7th/nvim-cmp'
     use 'hrsh7th/cmp-nvim-lsp'

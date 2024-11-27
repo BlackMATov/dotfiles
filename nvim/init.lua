@@ -6,6 +6,7 @@ require("blackmatov.core.options")
 
 require("blackmatov.plugins.bufferline")
 require("blackmatov.plugins.comment")
+require("blackmatov.plugins.gitsigns")
 require("blackmatov.plugins.lualine")
 require("blackmatov.plugins.mason")
 require("blackmatov.plugins.nvim-cmp")
