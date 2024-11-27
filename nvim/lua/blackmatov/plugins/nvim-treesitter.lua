@@ -35,19 +35,15 @@ nvim_treesitter_configs.setup({
             set_jumps = true,
             goto_next_start = {
                 ["]]"] = "@function.outer",
-                ["]c"] = "@class.outer",
             },
             goto_next_end = {
                 ["]["] = "@function.outer",
-                ["]C"] = "@class.outer",
             },
             goto_previous_start = {
                 ["[["] = "@function.outer",
-                ["[c"] = "@class.outer",
             },
             goto_previous_end = {
                 ["[]"] = "@function.outer",
-                ["[C"] = "@class.outer",
             },
         },
         select = {

@@ -30,6 +30,9 @@ keymap.set("n", "<leader>ls", ":Telescope lsp_document_symbols<CR>", kmopts)
 keymap.set("n", "<leader>lt", ":Telescope lsp_type_definitions<CR>", kmopts)
 keymap.set("n", "<leader>lw", ":Telescope lsp_workspace_symbols<CR>", kmopts)
 
+keymap.set("n", "[c", ":Gitsigns prev_hunk<CR>", kmopts)
+keymap.set("n", "]c", ":Gitsigns next_hunk<CR>", kmopts)
+
 keymap.set("n", "<leader>to", ":tabnew<CR>", kmopts)
 keymap.set("n", "<leader>tx", ":tabclose<CR>", kmopts)
 keymap.set("n", "<leader>tn", ":tabnext<CR>", kmopts)
