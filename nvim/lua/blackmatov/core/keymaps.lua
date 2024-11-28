@@ -21,6 +21,10 @@ keymap.set("n", "<leader>fd", ":Telescope diagnostics<CR>", kmopts)
 keymap.set("n", "<leader>/", ":Telescope current_buffer_fuzzy_find<CR>", kmopts)
 keymap.set("n", "<leader><leader>", ":Telescope buffers<CR>", kmopts)
 
+keymap.set("n", "<leader>gb", ":Telescope git_bcommits<CR>", kmopts)
+keymap.set("n", "<leader>gc", ":Telescope git_commits<CR>", kmopts)
+keymap.set("n", "<leader>gs", ":Telescope git_status<CR>", kmopts)
+
 keymap.set("n", "<leader>lh", vim.lsp.buf.hover, kmopts)
 keymap.set("n", "<leader>ln", vim.lsp.buf.rename, kmopts)
 keymap.set("n", "<leader>ld", ":Telescope lsp_definitions<CR>", kmopts)
