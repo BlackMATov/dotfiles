@@ -6,6 +6,8 @@ vim.g.maplocalleader = ' '
 local keymap = vim.keymap
 local kmopts = { noremap = true, silent = true }
 
+keymap.set("i", "jk", "<Esc>", kmopts)
+
 keymap.set("n", "<Esc>", ":nohl<CR>", kmopts)
 keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", kmopts)
 
