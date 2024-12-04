@@ -8,6 +8,13 @@ local kmopts = { noremap = true, silent = true }
 
 keymap.set("i", "jk", "<Esc>", kmopts)
 
+keymap.set("n", "n", "nzz", kmopts)
+keymap.set("n", "N", "Nzz", kmopts)
+keymap.set("n", "*", "*zz", kmopts)
+keymap.set("n", "#", "#zz", kmopts)
+keymap.set("n", "g*", "g*zz", kmopts)
+keymap.set("n", "g#", "g#zz", kmopts)
+
 keymap.set("n", "<Esc>", ":nohl<CR>", kmopts)
 keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", kmopts)
 
