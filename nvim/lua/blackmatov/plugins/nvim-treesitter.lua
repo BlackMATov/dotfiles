@@ -21,6 +21,7 @@ nvim_treesitter_configs.setup({
         "lua",
         "vim",
         "vimdoc",
+        "xml",
         "zig",
     },
     sync_install = false,
