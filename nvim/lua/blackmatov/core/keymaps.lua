@@ -18,6 +18,7 @@ keymap.set("n", "g#", "g#zz", kmopts)
 keymap.set("n", "<Esc>", ":nohl<CR>", kmopts)
 keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", kmopts)
 
+keymap.set("n", "<leader>q", ":q<CR>", kmopts)
 keymap.set("n", "<leader>w", ":w<CR>", kmopts)
 
 keymap.set("n", "<leader>nn", ":NvimTreeToggle<CR>", kmopts)
