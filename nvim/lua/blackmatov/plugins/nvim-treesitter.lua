@@ -17,6 +17,7 @@ nvim_treesitter_configs.setup({
         "c",
         "cmake",
         "cpp",
+        "ini",
         "json",
         "lua",
         "vim",

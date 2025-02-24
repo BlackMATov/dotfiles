@@ -20,6 +20,7 @@ keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", kmopts)
 
 keymap.set("n", "<leader>q", ":q<CR>", kmopts)
 keymap.set("n", "<leader>w", ":w<CR>", kmopts)
+keymap.set("n", "<leader>e", ":e<CR>", kmopts)
 
 keymap.set("n", "<leader>nn", ":NvimTreeToggle<CR>", kmopts)
 keymap.set("n", "<leader>nf", ":NvimTreeFindFile<CR>", kmopts)
