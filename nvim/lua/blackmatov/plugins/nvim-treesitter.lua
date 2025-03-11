@@ -15,14 +15,18 @@ end
 nvim_treesitter_configs.setup({
     ensure_installed = {
         "c",
+        "c_sharp",
         "cmake",
         "cpp",
+        "erlang",
+        "haskell",
         "ini",
         "json",
         "lua",
         "vim",
         "vimdoc",
         "xml",
+        "yaml",
         "zig",
     },
     sync_install = false,
