@@ -1,0 +1,27 @@
+set visualbell
+
+set number
+set relativenumber
+
+set scrolloff=4
+
+set ignorecase
+set smartcase
+
+set incsearch
+
+map <Space> <Leader>
+
+nnoremap <leader>e :e<CR>
+nnoremap <leader>q :q<CR>
+nnoremap <leader>w :w<CR>
+
+nnoremap <leader>s <C-w>s
+nnoremap <leader>v <C-w>v
+
+" https://jb.gg/ideavim-plugins
+Plug 'justinmk/vim-sneak'
+Plug 'machakann/vim-highlightedyank'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-surround'
