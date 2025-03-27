@@ -1,36 +1,43 @@
-set visualbell
-
 set number
 set relativenumber
 
-set scrolloff=4
-
-set ignorecase
-set smartcase
-
-set incsearch
-
 set clipboard+=unnamedplus
 
-map <Space> <Leader>
+set hlsearch
+set ignorecase
+set incsearch
+set smartcase
 
-nnoremap <leader>e :e<CR>
-nnoremap <leader>q :q<CR>
-nnoremap <leader>w :w<CR>
+set visualbell
 
-nnoremap <leader>s <C-w>s
-nnoremap <leader>v <C-w>v
+let mapleader = " "
 
-" https://jb.gg/ideavim-plugins
-Plug 'justinmk/vim-sneak'
-Plug 'machakann/vim-highlightedyank'
-Plug 'terryma/vim-multiple-cursors'
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-surround'
+imap jk <esc>
 
-nmap <C-n> <Plug>NextWholeOccurrence
-xmap <C-n> <Plug>NextWholeOccurrence
-nmap g<C-n> <Plug>NextOccurrence
-xmap g<C-n> <Plug>NextOccurrence
-xmap <C-x> <Plug>SkipOccurrence
-xmap <C-p> <Plug>RemoveOccurrence
+nmap n nzz
+nmap N Nzz
+nmap * *zz
+nmap # #zz
+nmap g* g*zz
+nmap g# g#zz
+
+nmap <esc> :nohl<cr>
+
+nmap <leader>q :q<cr>
+nmap <leader>w :w<cr>
+nmap <leader>e :e<cr>
+
+nmap <C-k> <C-w>k
+nmap <C-j> <C-w>j
+nmap <C-h> <C-w>h
+nmap <C-l> <C-w>l
+
+nmap <leader>s <C-w>s
+nmap <leader>v <C-w>v
+
+vmap < <gv
+vmap > >gv
+
+nmap <leader>d "_d
+vmap <leader>d "_d
+xmap <leader>p "_dP
