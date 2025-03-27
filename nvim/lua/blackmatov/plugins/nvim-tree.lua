@@ -4,6 +4,8 @@ if not nvimtree_status then
     return
 end
 
+local vim = _G["vim"]
+
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 

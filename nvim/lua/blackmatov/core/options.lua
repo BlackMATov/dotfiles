@@ -1,3 +1,5 @@
+local vim = _G["vim"]
+
 local opt = vim.opt
 
 opt.number = true
