@@ -1,5 +1,10 @@
+Plug 'kana/vim-textobj-entire'
+Plug 'michaeljsmith/vim-indent-object'
+
 set number
 set relativenumber
+
+set scrolloff=4
 
 set clipboard+=unnamedplus
 
@@ -10,7 +15,7 @@ set smartcase
 
 set visualbell
 
-let mapleader = " "
+let mapleader=" "
 
 imap jk <esc>
 
@@ -41,3 +46,5 @@ vmap > >gv
 nmap <leader>d "_d
 vmap <leader>d "_d
 xmap <leader>p "_dP
+
+nmap <leader>ld <C-]>
