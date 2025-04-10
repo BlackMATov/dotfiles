@@ -61,13 +61,13 @@ nmap <S-TAB> :action NextTab<CR>
 nmap [[ :action MethodUp<CR>
 nmap ]] :action MethodDown<CR>
 
-nmap <leader>= :action ReformatCode<CR>
+nmap gq :action ReformatCode<CR>
 
 nmap ]d :action GotoNextError<CR>
 nmap [d :action GotoPreviousError<CR>
 
 nmap <leader>lr :action FindUsages<CR>
-nmap <leader>ld :action GotToDeclaration<CR>
+nmap <leader>ld :action GotoDeclaration<CR>
 nmap <leader>ls :action GotoSymbol<CR>
 
 nmap <leader>ff :action GotoFile<CR>
