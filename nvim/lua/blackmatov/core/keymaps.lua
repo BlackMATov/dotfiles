@@ -31,6 +31,7 @@ keymap.set("n", "<leader>fc", ":Telescope grep_string<CR>", kmopts)
 keymap.set("n", "<leader>fh", ":Telescope help_tags<CR>", kmopts)
 keymap.set("n", "<leader>fq", ":Telescope cmdline<CR>", kmopts)
 keymap.set("n", "<leader>fd", ":Telescope diagnostics<CR>", kmopts)
+keymap.set("n", "<leader>fm", ":Telescope marks<CR>", kmopts)
 keymap.set("n", "<leader>/", ":Telescope current_buffer_fuzzy_find<CR>", kmopts)
 keymap.set("n", "<leader><leader>", ":Telescope buffers<CR>", kmopts)
 
