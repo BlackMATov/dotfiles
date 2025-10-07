@@ -24,6 +24,7 @@ nvim_treesitter_configs.setup({
         "ini",
         "json",
         "lua",
+        "luau",
         "vim",
         "vimdoc",
         "xml",
