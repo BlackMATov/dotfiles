@@ -34,7 +34,7 @@ nmap # #zz
 nmap g* g*zz
 nmap g# g#zz
 
-nmap <esc> :nohl<cr>
+nmap <esc> :nohl<cr>:action EditorEscape<CR>
 
 nmap <leader>q :q<cr>
 nmap <leader>w :w<cr>
