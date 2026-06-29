@@ -5,6 +5,7 @@ Plug 'michaeljsmith/vim-indent-object'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
+Plug 'vim-scripts/argtextobj.vim'
 
 nmap <C-n> <Plug>NextWholeOccurrence
 xmap <C-n> <Plug>NextWholeOccurrence
@@ -60,6 +61,9 @@ nmap <S-TAB> :action NextTab<CR>
 
 nmap [[ :action MethodUp<CR>
 nmap ]] :action MethodDown<CR>
+
+nmap ]c :action VcsShowNextChangeMarker<CR>
+nmap [c :action VcsShowPrevChangeMarker<CR>
 
 nmap gq :action ReformatCode<CR>
 
